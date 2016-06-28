@@ -10,10 +10,10 @@ name01_20160610-101002.csv
 
 {% highlight bash %}
 ls -1 |\
-   while read FILE 
-   do
-      DATE="$(echo $FILE | perl -lpe 's/^.*20(......)-(....).*/\1\2/')
-      echo touch $FILE -t $DATE
+while read FILE 
+do
+   DATE="$(echo $FILE | perl -lpe 's/^.*20(......)-(....).*/\1\2/')
+   echo touch $FILE -t $DATE
 done
 
 {% endhighlight %}
